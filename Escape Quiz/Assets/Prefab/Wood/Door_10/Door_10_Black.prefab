@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 4970741399400872}
   m_Layer: 0
   m_Name: Door_10_Black
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,7 +431,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 27671ef6ad4a82148ade30fbd4ec5d32, type: 2}
+  - {fileID: 2100000, guid: d90c21fd6f35d5545ac0003f2b149443, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
