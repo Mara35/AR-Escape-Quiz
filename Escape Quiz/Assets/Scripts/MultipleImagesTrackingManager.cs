@@ -52,7 +52,7 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
             // If duplicate names exist, prevent crash
             if (_arObjects.ContainsKey(arObject.name))
             {
-                Debug.LogWarning($"Duplicate prefab name '{arObject.name}'. Keys must be unique. Skipping this one.");
+                
                 Destroy(arObject);
                 continue;
             }
@@ -79,10 +79,11 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
         if (trackedImage == null) return;
 
         string imageName = trackedImage.referenceImage.name;
+        
 
         if (!_arObjects.TryGetValue(imageName, out GameObject obj) || obj == null)
         {
-    
+    Debug.LogWarning($"No prefab found for tracked image '{imageName}'.");
             return;
         }
 
@@ -90,6 +91,7 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
         if (trackedImage.trackingState == TrackingState.None ||
             trackedImage.trackingState == TrackingState.Limited)
         {
+            
             obj.SetActive(false);
             return;
         }
@@ -98,7 +100,7 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
         obj.SetActive(true);
 
         obj.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
-
+        
     }
 
     private void HideTrackedImageObject(ARTrackedImage trackedImage)
