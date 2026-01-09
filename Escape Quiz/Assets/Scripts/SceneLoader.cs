@@ -15,6 +15,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("InstructionScene");
     }
 
+  public void LoadFirstHint()
+    {
+        SceneManager.LoadScene("FirstHintRules");
+    }
+
     public void LoadGame()
     {
         if (GameManager.Instance != null)

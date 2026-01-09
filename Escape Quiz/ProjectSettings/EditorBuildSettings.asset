@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 6e1b8bba6042f3947891f140173e487e
   - enabled: 1
+    path: Assets/Scenes/FirstHintRules.unity
+    guid: c511b8b5432540448b038cc6c602a96a
+  - enabled: 1
     path: Assets/Scenes/InstructionScene.unity
     guid: ecaf29d7b9ac1fe43982058266d5aa18
   - enabled: 1
@@ -17,14 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VictoryScene.unity
     guid: 874f84cbddd01be4ebfd06330754a284
-    path: Assets/Scenes/FourthSceneDoor.unity
-    guid: 6550c171402c6f848b564777bf329b23
   - enabled: 1
     path: Assets/Scenes/ThirdHintPipe.unity
     guid: 0ce46ba6ce024084faa3c1a06ec4155d
-  - enabled: 1
-    path: Assets/Scenes/FirstHintRules.unity
-    guid: c511b8b5432540448b038cc6c602a96a
   - enabled: 1
     path: Assets/Scenes/SecondHintSocket.unity
     guid: 2a9f5332595cbbc4e8796e94d2ca10eb
