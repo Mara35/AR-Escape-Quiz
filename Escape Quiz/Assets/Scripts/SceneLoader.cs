@@ -5,6 +5,8 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadStart()
     {
+        if (GameManager.Instance != null)
+            GameManager.Instance.ResetTimer();
         SceneManager.LoadScene("StartScene");
     }
 
@@ -15,6 +17,11 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadGame()
     {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.StartTimer();
+        }
+
         SceneManager.LoadScene("SampleScene");
     }
 }
