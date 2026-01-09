@@ -12,7 +12,6 @@ Library: C:\Users\maras\Documents\Unity\AR-Escape-Quiz\Escape Quiz\Temp\BurstOut
 --float-mode=Fast
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\maras\Documents\Unity\AR-Escape-Quiz\Escape Quiz\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\maras\Documents\Unity\AR-Escape-Quiz\Escape Quiz\Library\Burst
 --output=C:\Users\maras\Documents\Unity\AR-Escape-Quiz\Escape Quiz\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -31,7 +30,6 @@ Library: C:\Users\maras\Documents\Unity\AR-Escape-Quiz\Escape Quiz\Temp\BurstOut
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\maras\Documents\Unity\AR-Escape-Quiz\Escape Quiz\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\maras\Documents\Unity\AR-Escape-Quiz\Escape Quiz\Library\Burst
 --output=C:\Users\maras\Documents\Unity\AR-Escape-Quiz\Escape Quiz\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
