@@ -17,7 +17,8 @@ namespace DoorScript
         public AudioSource asource;
         public AudioClip openDoor, closeDoor;
 
-        private bool victoryTriggered = false; // 🔒 nur einmal
+        private bool victoryTriggered = false;
+        private bool openedByPlayer = false; // 🔑 NEU
 
         void Start()
         {
@@ -26,7 +27,7 @@ namespace DoorScript
 
         void Update()
         {
-            // Touch-Eingabe (UNVERÄNDERT)
+            // Touch-Eingabe (unverändert)
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
@@ -41,14 +42,13 @@ namespace DoorScript
                 }
             }
 
-            // Türbewegung (UNVERÄNDERT)
+            // Türbewegung (unverändert)
             if (open)
             {
                 Quaternion target = Quaternion.Euler(0, DoorOpenAngle, 0);
                 transform.localRotation =
                     Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * 5 * smooth);
 
-                // 🏁 NEU: Prüfen, ob Tür wirklich offen ist
                 CheckForVictory();
             }
             else
@@ -62,23 +62,22 @@ namespace DoorScript
         public void OpenDoor()
         {
             open = !open;
+            openedByPlayer = open; // 🔑 nur beim Öffnen setzen
+
             asource.clip = open ? openDoor : closeDoor;
             asource.Play();
         }
 
-        // 🔎 Victory erst bei kompletter Öffnung
         private void CheckForVictory()
         {
-            if (victoryTriggered)
+            // 🔒 Nur wenn Spieler die Tür geöffnet hat
+            if (!openedByPlayer || victoryTriggered)
                 return;
 
             float currentY = transform.localEulerAngles.y;
-
-            // Unity-Winkel normalisieren (−180° bis +180°)
             if (currentY > 180f)
                 currentY -= 360f;
 
-            // Toleranz von 1 Grad
             if (Mathf.Abs(currentY - DoorOpenAngle) < 1.0f)
             {
                 victoryTriggered = true;
