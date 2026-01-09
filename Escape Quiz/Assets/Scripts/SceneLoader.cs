@@ -20,6 +20,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("FirstHintRules");
     }
 
+    public void LoadFourthHint()
+    {
+        SceneManager.LoadScene("FourthSceneDoor");
+    }
+
     public void LoadGame()
     {
         if (GameManager.Instance != null)
