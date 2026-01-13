@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 010ab566711b9084fad5f5ed2c31d831
+timeCreated: 1492939845
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 80004
+  packageName: Building Apartment
+  packageVersion: 1.0
+  assetPath: Assets/Building Apartment/Prefab/Building_Apartment_13.prefab
+  uploadId: 175955

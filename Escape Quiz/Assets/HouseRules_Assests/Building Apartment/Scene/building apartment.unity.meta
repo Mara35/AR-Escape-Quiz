@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 13efbb247484314489c6c32abf3e1990
+timeCreated: 1483799316
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 80004
+  packageName: Building Apartment
+  packageVersion: 1.0
+  assetPath: Assets/Building Apartment/Scene/building apartment.unity
+  uploadId: 175955
