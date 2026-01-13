@@ -11,7 +11,7 @@ public class TargetObject : MonoBehaviour
         if (hasBeenHandled)
             return;
 
-        if (other.CompareTag("AllowedTarget"))
+        if (other.CompareTag("Target"))
         {
             if (shouldGoIntoHouse)
             {
