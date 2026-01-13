@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TargetObject : MonoBehaviour
 {
+    [Header("Target Settings")]
     public bool shouldGoIntoHouse = true;
 
     private bool hasBeenHandled = false;
@@ -11,30 +12,20 @@ public class TargetObject : MonoBehaviour
         if (hasBeenHandled)
             return;
 
+        // House / target object
         if (other.CompareTag("Target"))
         {
             if (shouldGoIntoHouse)
             {
-                HandleCorrectPlacement();
+                hasBeenHandled = true;
+
+                // Notify puzzle manager
+                FindObjectOfType<PuzzleProgress>().RegisterCorrectObject();
+
+                // Despawn object
+                gameObject.SetActive(false);
             }
-            else
-            {
-                HandleForbiddenPlacement();
-            }
+            // Forbidden objects do nothing
         }
-    }
-
-    void HandleCorrectPlacement()
-    {
-        hasBeenHandled = true;
-
-        // Objekt verschwinden lassen
-        gameObject.SetActive(false);
-    }
-
-    void HandleForbiddenPlacement()
-    {
-       
-        Debug.Log($"{name} not allowed");
     }
 }
