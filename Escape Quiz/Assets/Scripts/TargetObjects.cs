@@ -2,22 +2,39 @@ using UnityEngine;
 
 public class TargetObject : MonoBehaviour
 {
-    public bool isCorrectlyPlaced = false;
     public bool shouldGoIntoHouse = true;
+
+    private bool hasBeenHandled = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Target"))
+        if (hasBeenHandled)
+            return;
+
+        if (other.CompareTag("AllowedTarget"))
         {
-            isCorrectlyPlaced = shouldGoIntoHouse;
+            if (shouldGoIntoHouse)
+            {
+                HandleCorrectPlacement();
+            }
+            else
+            {
+                HandleForbiddenPlacement();
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void HandleCorrectPlacement()
     {
-        if (other.CompareTag("Target"))
-        {
-            isCorrectlyPlaced = false;
-        }
+        hasBeenHandled = true;
+
+        // Objekt verschwinden lassen
+        gameObject.SetActive(false);
+    }
+
+    void HandleForbiddenPlacement()
+    {
+       
+        Debug.Log($"{name} not allowed");
     }
 }
