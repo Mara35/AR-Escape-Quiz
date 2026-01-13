@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - Drag
+  - Target
   layers:
   - Default
   - TransparentFX
