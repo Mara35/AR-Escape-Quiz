@@ -1,8 +1,15 @@
 using UnityEngine;
 
-public class Grabbel : MonoBehaviour
+public class MobileDrag : MonoBehaviour
 {
-    private GameObject selectedObject;
+    private Camera cam;
+    private GameObject draggedObject;
+    private float dragY;
+
+    void Start()
+    {
+        cam = Camera.main;
+    }
 
     void Update()
     {
@@ -10,40 +17,36 @@ public class Grabbel : MonoBehaviour
             return;
 
         Touch touch = Input.GetTouch(0);
+        Ray ray = cam.ScreenPointToRay(touch.position);
+        RaycastHit hit;
 
         if (touch.phase == TouchPhase.Began)
         {
-            RaycastHit hit = CastRay(touch.position);
-
-            if (hit.collider != null && hit.collider.CompareTag("Drag"))
+            if (Physics.Raycast(ray, out hit))
             {
-                selectedObject = hit.collider.gameObject;
+                if (hit.collider.CompareTag("Drag"))
+                {
+                    draggedObject = hit.collider.gameObject;
+                    dragY = draggedObject.transform.position.y;
+                }
             }
         }
 
-        if (touch.phase == TouchPhase.Moved && selectedObject != null)
+        if (touch.phase == TouchPhase.Moved && draggedObject != null)
         {
-            Vector3 position = new Vector3(
-                touch.position.x,
-                touch.position.y,
-                Camera.main.WorldToScreenPoint(selectedObject.transform.position).z
-            );
+            Plane plane = new Plane(Vector3.up, new Vector3(0, dragY, 0));
+            float distance;
 
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-            selectedObject.transform.position = new Vector3(worldPosition.x, 0.25f, worldPosition.z);
+            if (plane.Raycast(ray, out distance))
+            {
+                Vector3 point = ray.GetPoint(distance);
+                draggedObject.transform.position = point;
+            }
         }
 
         if (touch.phase == TouchPhase.Ended)
         {
-            selectedObject = null;
+            draggedObject = null;
         }
-    }
-
-    private RaycastHit CastRay(Vector2 touchPosition)
-    {
-        Ray ray = Camera.main.ScreenPointToRay(touchPosition);
-        RaycastHit hit;
-        Physics.Raycast(ray, out hit);
-        return hit;
     }
 }
