@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PuzzleProgress : MonoBehaviour
 {
-    [Header("Puzzle Settings")]
     public int numberOfCorrectObjects = 2;
 
     private int collectedObjects = 0;
@@ -10,31 +9,45 @@ public class PuzzleProgress : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("[PuzzleProgress] START");
+
         sceneLoader = FindObjectOfType<SceneLoader>();
 
         if (sceneLoader == null)
         {
-            Debug.LogError("SceneLoader not found in the scene!");
+            Debug.LogError("[PuzzleProgress] SceneLoader NOT FOUND");
+        }
+        else
+        {
+            Debug.Log("[PuzzleProgress] SceneLoader FOUND");
         }
     }
 
     public void RegisterCorrectObject()
     {
         collectedObjects++;
-        Debug.Log($"Correct objects collected: {collectedObjects}/{numberOfCorrectObjects}");
+        Debug.Log($"[PuzzleProgress] REGISTERED → {collectedObjects}/{numberOfCorrectObjects}");
 
         if (collectedObjects >= numberOfCorrectObjects)
         {
+            Debug.Log("[PuzzleProgress] PUZZLE COMPLETE → loading next scene");
             LoadNextScene();
+        }
+        else
+        {
+            Debug.Log("[PuzzleProgress] Puzzle NOT complete yet");
         }
     }
 
     private void LoadNextScene()
     {
-        // Call ANY existing SceneLoader method you want
+        if (sceneLoader == null)
+        {
+            Debug.LogError("[PuzzleProgress] Cannot load scene – SceneLoader is NULL");
+            return;
+        }
+
+        Debug.Log("[PuzzleProgress] Calling SceneLoader.LoadFourthHint()");
         sceneLoader.LoadFourthHint();
-        // Example alternatives:
-        // sceneLoader.LoadFirstHint();
-        // sceneLoader.LoadInstructions();
     }
 }

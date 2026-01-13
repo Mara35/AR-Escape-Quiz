@@ -2,30 +2,51 @@ using UnityEngine;
 
 public class TargetObject : MonoBehaviour
 {
-    [Header("Target Settings")]
     public bool shouldGoIntoHouse = true;
-
     private bool hasBeenHandled = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (hasBeenHandled)
-            return;
+        Debug.Log($"[TargetObject] Trigger ENTER on {name} with {other.name}");
 
-        // House / target object
+        if (hasBeenHandled)
+        {
+            Debug.Log("[TargetObject] Already handled, ignoring");
+            return;
+        }
+
         if (other.CompareTag("Target"))
         {
+            Debug.Log("[TargetObject] Target tag matched");
+
             if (shouldGoIntoHouse)
             {
+                Debug.Log("[TargetObject] Object is allowed → handling");
+
                 hasBeenHandled = true;
 
-                // Notify puzzle manager
-                FindObjectOfType<PuzzleProgress>().RegisterCorrectObject();
+                PuzzleProgress puzzle = FindObjectOfType<PuzzleProgress>();
+                if (puzzle == null)
+                {
+                    Debug.LogError("[TargetObject] PuzzleProgress NOT FOUND");
+                }
+                else
+                {
+                    Debug.Log("[TargetObject] PuzzleProgress FOUND → registering object");
+                    puzzle.RegisterCorrectObject();
+                }
 
-                // Despawn object
+                Debug.Log("[TargetObject] Deactivating object");
                 gameObject.SetActive(false);
             }
-            // Forbidden objects do nothing
+            else
+            {
+                Debug.Log("[TargetObject] Object is FORBIDDEN → doing nothing");
+            }
+        }
+        else
+        {
+            Debug.Log("[TargetObject] Other collider is NOT Target");
         }
     }
 }
