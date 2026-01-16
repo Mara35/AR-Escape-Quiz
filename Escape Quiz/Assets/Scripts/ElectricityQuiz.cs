@@ -38,7 +38,11 @@ public class ElectricityQuiz : MonoBehaviour
         }
         else
         {
-            feedbackText.text = "Wrong answer. Try again!";
+            if (feedbackText != null)
+            {
+                feedbackText.text = "Wrong answer!";
+            }
+
         }
     }
 
