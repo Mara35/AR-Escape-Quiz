@@ -1,52 +1,48 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TargetObject : MonoBehaviour
 {
     public bool shouldGoIntoHouse = true;
-    private bool hasBeenHandled = false;
+
+    private static int collectedCount = 0;
+    private static int requiredCount = 2;
+    private static bool hasReset = false;
+
+    private bool handled = false;
+
+    private void Start()
+    {
+        if (!hasReset)
+        {
+            collectedCount = 0;
+            hasReset = true;
+            Debug.Log("Counter reset");
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"[TargetObject] Trigger ENTER on {name} with {other.name}");
-
-        if (hasBeenHandled)
-        {
-            Debug.Log("[TargetObject] Already handled, ignoring");
+        if (handled)
             return;
-        }
 
-        if (other.CompareTag("Target"))
+        if (!other.CompareTag("Target"))
+            return;
+
+        if (!shouldGoIntoHouse)
+            return;
+
+        handled = true;
+        collectedCount++;
+
+        Debug.Log($"Collected {collectedCount}/{requiredCount}");
+
+        gameObject.SetActive(false);
+
+        if (collectedCount >= requiredCount)
         {
-            Debug.Log("[TargetObject] Target tag matched");
-
-            if (shouldGoIntoHouse)
-            {
-                Debug.Log("[TargetObject] Object is allowed → handling");
-
-                hasBeenHandled = true;
-
-                PuzzleProgress puzzle = FindObjectOfType<PuzzleProgress>();
-                if (puzzle == null)
-                {
-                    Debug.LogError("[TargetObject] PuzzleProgress NOT FOUND");
-                }
-                else
-                {
-                    Debug.Log("[TargetObject] PuzzleProgress FOUND → registering object");
-                    puzzle.RegisterCorrectObject();
-                }
-
-                Debug.Log("[TargetObject] Deactivating object");
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                Debug.Log("[TargetObject] Object is FORBIDDEN → doing nothing");
-            }
-        }
-        else
-        {
-            Debug.Log("[TargetObject] Other collider is NOT Target");
+            Debug.Log("🎉 Puzzle complete → loading next scene");
+            SceneManager.LoadScene("FourthSceneDoor");
         }
     }
 }
