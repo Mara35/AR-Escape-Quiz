@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3793404478887344319}
   - component: {fileID: 5453499613791366382}
   - component: {fileID: 3314320165853671649}
+  - component: {fileID: 941238222882490585}
   m_Layer: 0
   m_Name: Socket2
   m_TagString: Untagged
@@ -114,6 +115,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &941238222882490585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211861494639412787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4521a8a621f9e41b898e241b731704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quizPopup: {fileID: 0}
+  questionText: {fileID: 0}
+  feedbackText: {fileID: 0}
+  correctAnswerIndex: 1
 --- !u!1001 &232146511413257005
 PrefabInstance:
   m_ObjectHideFlags: 0

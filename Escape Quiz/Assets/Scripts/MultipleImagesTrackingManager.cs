@@ -100,6 +100,18 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
         obj.SetActive(true);
 
         obj.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
+
+        if (trackedImage.referenceImage.name == "Socket"
+            && trackedImage.trackingState == TrackingState.Tracking)
+        {
+            ElectricityQuiz quiz = FindObjectOfType<ElectricityQuiz>();
+
+            if (quiz != null && !quiz.IsQuizOpen)
+            {
+                quiz.ShowQuiz();
+            }
+        }
+
         
     }
 
@@ -112,4 +124,6 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
         if (_arObjects.TryGetValue(imageName, out GameObject obj) && obj != null)
             obj.SetActive(false);
     }
+
+    
 }

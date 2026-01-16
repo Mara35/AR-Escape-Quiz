@@ -12,6 +12,8 @@ public class ElectricityQuiz : MonoBehaviour
     public int correctAnswerIndex = 1; // 0=A, 1=B, 2=C
 
     private SceneLoader sceneLoader;
+    public bool IsQuizOpen => quizPopup.activeSelf;
+
 
     private void Start()
     {
