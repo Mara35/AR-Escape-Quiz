@@ -41,7 +41,7 @@ public class TargetObject : MonoBehaviour
 
         if (collectedCount >= requiredCount)
         {
-            Debug.Log("🎉 Puzzle complete → loading next scene");
+            Debug.Log("Quiz complete → loading next scene");
             SceneManager.LoadScene("FourthSceneDoor");
         }
     }
