@@ -20,6 +20,12 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("FirstHintRules");
     }
 
+     public void LoadSecondHint()
+    {
+        SceneManager.LoadScene("SecondHintSocket");
+    }
+
+
     public void LoadFourthHint()
     {
         SceneManager.LoadScene("FourthSceneDoor");

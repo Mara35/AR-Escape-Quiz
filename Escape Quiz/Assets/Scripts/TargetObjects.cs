@@ -42,7 +42,7 @@ public class TargetObject : MonoBehaviour
         if (collectedCount >= requiredCount)
         {
             Debug.Log("Quiz complete → loading next scene");
-            SceneManager.LoadScene("FourthSceneDoor");
+            SceneManager.LoadScene("SecondHintSocket");
         }
     }
 }
