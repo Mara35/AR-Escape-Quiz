@@ -25,6 +25,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("FourthSceneDoor");
     }
 
+    public void LoadThirdHint()
+    {
+        SceneManager.LoadScene("ThirdHintRules");
+    }
+    
     public void LoadGame()
     {
         if (GameManager.Instance != null)
