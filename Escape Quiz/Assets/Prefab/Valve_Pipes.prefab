@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1467454182873327017}
   - component: {fileID: 8161614125952059758}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Gas_Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
