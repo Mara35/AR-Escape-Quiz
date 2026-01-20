@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 698840494316914816}
   - component: {fileID: 1467454182873327017}
   - component: {fileID: 8161614125952059758}
+  - component: {fileID: 6053552794608368996}
   m_Layer: 0
   m_Name: Gas_Control
   m_TagString: Untagged
@@ -110,6 +111,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &6053552794608368996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2773715942724224008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa2969455f09494285482810d3e87b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gasEffect: {fileID: 2435659335335092880}
+  sceneLoader: {fileID: 0}
+  requiredRotation: 1080
+  rotationSpeed: 0.4
 --- !u!1 &4185586278005964729
 GameObject:
   m_ObjectHideFlags: 0
