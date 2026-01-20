@@ -11,6 +11,7 @@ public class GasValveController : MonoBehaviour
     private float lastAngle;
     private bool gasOff = false;
 
+    private bool isTouchingValve = false;
     private SceneLoader sceneLoader;
 
     void Start()
@@ -22,22 +23,53 @@ public class GasValveController : MonoBehaviour
     void Update()
     {
         if (gasOff) return;
+        if (Input.touchCount == 0) return;
 
-        if (Input.GetMouseButton(0))
+        Touch touch = Input.GetTouch(0);
+
+        if (touch.phase == TouchPhase.Began)
         {
-            float delta = Input.GetAxis("Mouse X") * rotationSpeed * 100f;
-            transform.Rotate(Vector3.up, delta);
+            isTouchingValve = IsTouchOnValve(touch.position);
+        }
 
-            float currentAngle = transform.eulerAngles.y;
-            float angleDelta = Mathf.DeltaAngle(lastAngle, currentAngle);
+        if (touch.phase == TouchPhase.Moved && isTouchingValve)
+        {
+            float delta = touch.deltaPosition.x * rotationSpeed;
+            RotateValve(delta);
+        }
 
-            accumulatedRotation += Mathf.Abs(angleDelta);
-            lastAngle = currentAngle;
+        if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+        {
+            isTouchingValve = false;
+        }
+    }
 
-            if (accumulatedRotation >= requiredRotation)
-            {
-                ShutOffGas();
-            }
+    bool IsTouchOnValve(Vector2 touchPosition)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(touchPosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            return hit.transform == transform;
+        }
+
+        return false;
+    }
+
+    void RotateValve(float delta)
+    {
+        transform.Rotate(Vector3.up, delta);
+
+        float currentAngle = transform.eulerAngles.y;
+        float angleDelta = Mathf.DeltaAngle(lastAngle, currentAngle);
+
+        accumulatedRotation += Mathf.Abs(angleDelta);
+        lastAngle = currentAngle;
+
+        if (accumulatedRotation >= requiredRotation)
+        {
+            ShutOffGas();
         }
     }
 
@@ -48,7 +80,5 @@ public class GasValveController : MonoBehaviour
 
         if (sceneLoader != null)
             sceneLoader.LoadFourthHint();
-        else
-            Debug.LogError("SceneLoader nicht gefunden!");
     }
 }
