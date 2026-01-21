@@ -36,6 +36,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("ThirdHintRules");
     }
     
+     public void LoadErrorHint()
+    {
+        SceneManager.LoadScene("ErrorScene");
+    }
     public void LoadGame()
     {
         if (GameManager.Instance != null)
