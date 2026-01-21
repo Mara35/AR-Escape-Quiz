@@ -33,7 +33,7 @@ public class ElectricityQuiz : MonoBehaviour
     {
         if (index == correctAnswerIndex)
         {
-            feedbackText.text = "Correct! ⚡";
+            feedbackText.text = "Correct!";
             Invoke(nameof(LoadNextHint), 1.0f);
         }
         else

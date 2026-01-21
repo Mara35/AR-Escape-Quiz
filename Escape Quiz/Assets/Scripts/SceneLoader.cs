@@ -33,7 +33,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadThirdHint()
     {
-        SceneManager.LoadScene("ThirdHintRules");
+        SceneManager.LoadScene("ThirdHintPipe");
     }
     
      public void LoadErrorHint()
