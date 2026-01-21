@@ -43,9 +43,9 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
         cachedQuiz = FindObjectOfType<ElectricityQuiz>();
 
         if (cachedQuiz == null)
-            Debug.LogError("❌ ElectricityQuiz NOT found in scene!");
+            Debug.LogError("ElectricityQuiz NOT found in scene!");
         else
-            Debug.Log("✅ ElectricityQuiz found and cached");
+            Debug.Log("ElectricityQuiz found and cached");
     }
 
     private void SetupSceneElements()
@@ -125,12 +125,12 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
 
         // ===== SOCKET2 QUIZ TRIGGER =====
         if (trackedImage.referenceImage.name == "Socket2"
-            && trackedImage.trackingState == TrackingState.Tracking
+            && (trackedImage.trackingState == TrackingState.Tracking
+                || trackedImage.trackingState == TrackingState.Limited)
             && !socket2QuizTriggered
             && cachedQuiz != null)
         {
-            Debug.Log("✅ Triggering Socket2 Quiz");
-
+            Debug.Log("Triggering Socket2 Quiz (Limited tracking)");
             socket2QuizTriggered = true;
             cachedQuiz.ShowQuiz();
         }
