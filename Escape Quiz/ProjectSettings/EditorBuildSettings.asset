@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondHintSocket.unity
     guid: 2a9f5332595cbbc4e8796e94d2ca10eb
+  - enabled: 1
+    path: Assets/Scenes/ErrorScene.unity
+    guid: 6c7d649ed46b59847ae976731399816a
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 7e685c39e4d8b67408d0bf85d0b0b672, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
