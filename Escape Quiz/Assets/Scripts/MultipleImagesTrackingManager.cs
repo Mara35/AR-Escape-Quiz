@@ -101,7 +101,7 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
 
         obj.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
 
-        if (trackedImage.referenceImage.name == "Socket"
+        if (trackedImage.referenceImage.name == "Socket2"
             && trackedImage.trackingState == TrackingState.Tracking)
         {
             ElectricityQuiz quiz = FindObjectOfType<ElectricityQuiz>();
