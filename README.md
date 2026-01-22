@@ -59,7 +59,7 @@ This loop is repeated until all quizzes are solved and the player reaches the Vi
 
 - Entry point of the app
 - Provides buttons for:
--- Start Game
+  - Start Game
 -- Introduction
 - When Start Game is selected, the game timer is started
 
