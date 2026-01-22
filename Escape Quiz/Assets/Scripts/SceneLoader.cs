@@ -6,6 +6,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadStart()
     {
         if (GameManager.Instance != null)
+            QuizGameManager.Instance.ResetGame(); 
             GameManager.Instance.ResetTimer();
         SceneManager.LoadScene("StartScene");
     }
@@ -35,6 +36,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("ThirdHintPipe");
     }
+    public void LoadSampleScene()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
     
     public void LoadErrorHint()
     {
@@ -53,4 +58,29 @@ public class SceneLoader : MonoBehaviour
 
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void LoadNextHint()
+{
+    int index = QuizGameManager.Instance.currentQuizIndex;
+
+    switch (index)
+    {
+        case 1:
+            LoadFirstHint();
+            break;
+        case 2:
+            LoadSecondHint();
+            break;
+        case 3:
+            LoadThirdHint();
+            break;
+        case 4:
+            LoadFourthHint();
+            break;
+        default:
+            SceneManager.LoadScene("VictoryScene");
+            break;
+    }
+}
+
 }
