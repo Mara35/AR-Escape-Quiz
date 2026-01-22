@@ -37,6 +37,23 @@ C#
 - No external controllers are required
 - The game logic is scene-based and event-driven
 
+
+## Application Flow Overview
+
+The game starts with a Start Scene, followed by optional instructions.
+Once the game begins, a timer is started and the player progresses through multiple cycles of:
+
+0. Start Game 
+1. Receiving a hint
+2. Finding and scanning the correct image
+3. Solving a quiz or task
+4. Receiving the next hint
+
+This loop is repeated until all quizzes are solved and the player reaches the Victory Scene, where the timer is stopped and the final time is displayed.
+
+
+
+
 ## Link to YouTube Tutorial 
 https://www.youtube.com/watch?v=GfS72wqKQ_g 
 
