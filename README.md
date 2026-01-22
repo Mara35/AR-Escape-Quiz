@@ -40,7 +40,9 @@ C#
 
 ## Application Flow Overview
 
+<p align="center">
 ![Application Flowchart](docs/FlowChart.svg)
+</p>
 
 The game starts with a Start Scene, followed by optional instructions.
 Once the game begins, a timer is started and the player progresses through multiple cycles of:
