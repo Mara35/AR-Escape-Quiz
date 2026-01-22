@@ -40,9 +40,7 @@ C#
 
 ## Application Flow Overview
 
-<p align="center">
 ![Application Flowchart](docs/FlowChart.svg)
-</p>
 
 The game starts with a Start Scene, followed by optional instructions.
 Once the game begins, a timer is started and the player progresses through multiple cycles of:
@@ -55,6 +53,58 @@ Once the game begins, a timer is started and the player progresses through multi
 
 This loop is repeated until all quizzes are solved and the player reaches the Victory Scene, where the timer is stopped and the final time is displayed.
 
+## Scene Description 
+
+### Start Scene
+
+- Entry point of the app
+- Provides buttons for:
+-- Start Game
+-- Introduction
+- When Start Game is selected, the game timer is started
+
+### Introduction Scene
+
+- Explains the rules and basic mechanics of the escape quiz
+- Describes:
+-- Image scanning
+-- Quiz interaction
+- After confirmation, the player proceeds to the main gameplay
+
+
+### Sample Scene (Main Scene)
+
+- Central gameplay scene of the application
+- Used for:
+-- Scanning images
+-- Spawning interactive objects
+-- Triggering quizzes
+- This scene is revisited multiple times throughout the game
+
+
+### Hint Scenes
+
+- Each hint scene provides guidance for the next task
+- Hints are shown only after completing the previous quiz
+- Examples:
+-- FirstHintRules
+-- SecondHintSocket
+-- ThirdHintPipe
+-- FourthSceneDoor
+
+### Error Scene
+
+- Triggered when the wrong image is scanned
+- Provides feedback that the player is on the wrong track
+- Does not reveal the solution
+- After leaving the error scene, the player can retry scanning
+
+### Victory Scene
+
+- Displayed after the final quiz is solved
+- Stops the timer
+- Shows the total time needed to complete the escape quiz
+- Confirms successful completion of the game
 
 
 
