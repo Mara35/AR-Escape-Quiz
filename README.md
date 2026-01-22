@@ -60,15 +60,15 @@ This loop is repeated until all quizzes are solved and the player reaches the Vi
 - Entry point of the app
 - Provides buttons for:
   - Start Game
--- Introduction
+  - Introduction
 - When Start Game is selected, the game timer is started
 
 ### Introduction Scene
 
 - Explains the rules and basic mechanics of the escape quiz
 - Describes:
--- Image scanning
--- Quiz interaction
+  - Image scanning
+  - Quiz interaction
 - After confirmation, the player proceeds to the main gameplay
 
 
@@ -76,9 +76,9 @@ This loop is repeated until all quizzes are solved and the player reaches the Vi
 
 - Central gameplay scene of the application
 - Used for:
--- Scanning images
--- Spawning interactive objects
--- Triggering quizzes
+  - Scanning images
+  - Spawning interactive objects
+  - Triggering quizzes
 - This scene is revisited multiple times throughout the game
 
 
@@ -87,10 +87,10 @@ This loop is repeated until all quizzes are solved and the player reaches the Vi
 - Each hint scene provides guidance for the next task
 - Hints are shown only after completing the previous quiz
 - Examples:
--- FirstHintRules
--- SecondHintSocket
--- ThirdHintPipe
--- FourthSceneDoor
+  - FirstHintRules
+  - SecondHintSocket
+  - ThirdHintPipe
+  - FourthSceneDoor
 
 ### Error Scene
 
@@ -105,6 +105,34 @@ This loop is repeated until all quizzes are solved and the player reaches the Vi
 - Stops the timer
 - Shows the total time needed to complete the escape quiz
 - Confirms successful completion of the game
+
+
+## Quiz Overview 
+The game consists of four main quizzes, each embedded into the AR experience.
+
+### 1. House Rules
+
+- Task: Find and read the house rules
+- Quiz type: Drag & Drop
+- Goal: Place allowed items into the house correctly
+
+
+### 2. Power Supply
+
+- Task: Find information about the power supply
+- Quiz type: Knowledge-based questions
+- Topic: Fundamentals of electrical engineering
+
+### 3. Gas Valve
+
+- Task: Find the gas valve image
+- Interaction: Manipulate a virtual gas control
+- Goal: Stop the gas supply correctly
+
+### 4. Door
+
+- Task: Find the exit
+- Goal: Unlock and open the door to escape
 
 
 
