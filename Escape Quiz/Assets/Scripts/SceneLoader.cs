@@ -36,9 +36,13 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("ThirdHintPipe");
     }
     
-     public void LoadErrorHint()
+    public void LoadErrorHint()
     {
         SceneManager.LoadScene("ErrorScene");
+    }
+    public void LoadSampleScene()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
     public void LoadGame()
     {
