@@ -45,10 +45,7 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("ErrorScene");
     }
-    public void LoadSampleScene()
-    {
-        SceneManager.LoadScene("SampleScene");
-    }
+   
     public void LoadGame()
     {
         if (GameManager.Instance != null)

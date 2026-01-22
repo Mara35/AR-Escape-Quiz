@@ -22,7 +22,7 @@ public class TrackedImageListener : MonoBehaviour
 
     private void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs args)
     {
-        // Only react when a NEW image is found
+        // React only when a NEW image is detected
         foreach (var trackedImage in args.added)
         {
             HandleTrackedImage(trackedImage);
@@ -37,7 +37,7 @@ public class TrackedImageListener : MonoBehaviour
 
         string imageName = trackedImage.referenceImage.name;
 
-        // Map image names to quiz order
+        // YOUR image order
         if (imageName == "HouseRules")
             scanTarget.quizID = 0;
         else if (imageName == "Socket2")

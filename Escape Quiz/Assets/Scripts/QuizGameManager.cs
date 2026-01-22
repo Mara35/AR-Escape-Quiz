@@ -4,9 +4,11 @@ public class QuizGameManager : MonoBehaviour
 {
     public static QuizGameManager Instance;
 
-    [Header("Quiz Progress")]
+    // Current step in the game (0 = first image)
     public int currentQuizIndex = 0;
-    public int totalQuizzes = 4;
+
+    // Lock scanning AFTER correct image
+    public bool scanLocked = false;
 
     private void Awake()
     {
@@ -22,24 +24,29 @@ public class QuizGameManager : MonoBehaviour
         }
     }
 
-   
-    // RESET
-  
+    // Called when a NEW game starts
     public void ResetGame()
     {
         currentQuizIndex = 0;
+        scanLocked = false;
     }
 
-    
-    // QUIZ LOGIC
-    
+    // Check if scanned image is the correct one
     public bool IsCorrectScan(int quizID)
     {
         return quizID == currentQuizIndex;
     }
 
+    // Call this AFTER quiz was solved correctly
     public void QuizSolved()
     {
         currentQuizIndex++;
+        scanLocked = false; // allow next image
+    }
+
+    // Lock scanning after correct image scan
+    public void LockAfterCorrectScan()
+    {
+        scanLocked = true;
     }
 }

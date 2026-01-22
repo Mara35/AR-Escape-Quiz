@@ -3,28 +3,27 @@ using UnityEngine.SceneManagement;
 
 public class ScanTarget : MonoBehaviour
 {
-    // Order of this image (0 = first quiz)
+    // Set by TrackedImageListener
     public int quizID;
-
-    // Quiz scene to load if scan is correct
-    public string quizSceneName;
 
     public void OnImageScanned()
     {
         if (QuizGameManager.Instance == null)
-        {
-            Debug.LogError("QuizGameManager not found");
             return;
-        }
+
+        // Ignore scans only AFTER correct image was used
+        if (QuizGameManager.Instance.scanLocked)
+            return;
 
         if (QuizGameManager.Instance.IsCorrectScan(quizID))
         {
-            // Correct image → load quiz scene
-            SceneManager.LoadScene(quizSceneName);
+            // Correct image → lock and go to quiz
+            QuizGameManager.Instance.LockAfterCorrectScan();
+            SceneManager.LoadScene("QuizScene"); // <-- CHECK NAME
         }
         else
         {
-            // Wrong image → load error scene via SceneLoader
+            // Wrong image → ALWAYS show error
             FindObjectOfType<SceneLoader>().LoadErrorHint();
         }
     }
