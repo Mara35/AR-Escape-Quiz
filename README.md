@@ -119,7 +119,7 @@ The game consists of four main quizzes, each embedded into the AR experience.
 
 ### 2. Power Supply
 
-- Task: Find information about the power supply
+- Task: Find the image of the power supply
 - Quiz type: Knowledge-based questions
 - Topic: Fundamentals of electrical engineering
 
