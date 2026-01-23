@@ -12,6 +12,6 @@ public class EndGameButton : MonoBehaviour
             GameManager.Instance.StopTimer();
         }
 
-        SceneManager.LoadScene("VictoryScene");
+        SceneManager.LoadScene("StartScene");
     }
 }

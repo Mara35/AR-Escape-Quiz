@@ -1161,9 +1161,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 759656291}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadStart
+      - m_Target: {fileID: 1046678808}
+        m_TargetAssemblyTypeName: EndGameButton, Assembly-CSharp
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
