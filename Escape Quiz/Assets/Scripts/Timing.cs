@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         startTime = Time.time;
         timerRunning = true;
-        Debug.Log("Timer gestartet");
+        Debug.Log("Timer started");
     }
 
     public void StopTimer()
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
         timerRunning = false;
         finalTime = Time.time - startTime;
-        Debug.Log("Timer gestoppt: " + finalTime);
+        Debug.Log("Timer stopped: " + finalTime);
     }
 
     public float GetFinalTime()

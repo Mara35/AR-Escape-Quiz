@@ -6,7 +6,7 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class TrackedImagePrefabSpawner : MonoBehaviour
 {
-    // Prefabs to spawn (assign in Inspector)
+    // Prefabs to spawn 
     [SerializeField] private List<GameObject> prefabsToSpawn = new List<GameObject>();
 
     private ARTrackedImageManager _trackedImageManager;
@@ -14,10 +14,10 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
     // Key: reference image name, Value: spawned prefab instance
     private readonly Dictionary<string, GameObject> _arObjects = new Dictionary<string, GameObject>();
 
-    // ===== QUIZ RELATED (added, no existing logic removed) =====
+   
     private ElectricityQuiz cachedQuiz;
     private bool socket2QuizTriggered = false;
-    // ==========================================================
+    
 
     private void Awake()
     {
@@ -134,7 +134,7 @@ public class TrackedImagePrefabSpawner : MonoBehaviour
             socket2QuizTriggered = true;
             cachedQuiz.ShowQuiz();
         }
-        // ===============================
+        
     }
 
     private void HideTrackedImageObject(ARTrackedImage trackedImage)

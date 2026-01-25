@@ -19,11 +19,11 @@ public class ScanTarget : MonoBehaviour
         {
             // Correct image → lock and go to quiz
             QuizGameManager.Instance.LockAfterCorrectScan();
-            SceneManager.LoadScene("QuizScene"); // <-- CHECK NAME
+            SceneManager.LoadScene("QuizScene"); 
         }
         else
         {
-            // Wrong image → ALWAYS show error
+            // Wrong image → show error
             FindObjectOfType<SceneLoader>().LoadErrorHint();
         }
     }

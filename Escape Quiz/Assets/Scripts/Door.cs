@@ -18,7 +18,7 @@ namespace DoorScript
         public AudioClip openDoor, closeDoor;
 
         private bool victoryTriggered = false;
-        private bool openedByPlayer = false; // 🔑 NEU
+        private bool openedByPlayer = false; 
 
         void Start()
         {
@@ -27,7 +27,7 @@ namespace DoorScript
 
         void Update()
         {
-            // Touch-Eingabe (unverändert)
+            // Touch Input
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
@@ -42,7 +42,7 @@ namespace DoorScript
                 }
             }
 
-            // Türbewegung (unverändert)
+            // Door Movement
             if (open)
             {
                 Quaternion target = Quaternion.Euler(0, DoorOpenAngle, 0);
@@ -62,7 +62,7 @@ namespace DoorScript
         public void OpenDoor()
         {
             open = !open;
-            openedByPlayer = open; // 🔑 nur beim Öffnen setzen
+            openedByPlayer = open; 
 
             asource.clip = open ? openDoor : closeDoor;
             asource.Play();
@@ -70,7 +70,7 @@ namespace DoorScript
 
         private void CheckForVictory()
         {
-            // 🔒 Nur wenn Spieler die Tür geöffnet hat
+            
             if (!openedByPlayer || victoryTriggered)
                 return;
 
@@ -87,7 +87,7 @@ namespace DoorScript
 
         private void TriggerVictory()
         {
-            Debug.Log("🚪 Tür vollständig geöffnet – Victory!");
+            Debug.Log("Door opened – Victory!");
 
             if (GameManager.Instance != null)
             {

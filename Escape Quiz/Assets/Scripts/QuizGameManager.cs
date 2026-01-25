@@ -7,7 +7,7 @@ public class QuizGameManager : MonoBehaviour
     // Current step in the game (0 = first image)
     public int currentQuizIndex = 0;
 
-    // Lock scanning AFTER correct image
+    // Lock scanning after correct image
     public bool scanLocked = false;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class QuizGameManager : MonoBehaviour
         }
     }
 
-    // Called when a NEW game starts
+    // Called when a new game starts
     public void ResetGame()
     {
         currentQuizIndex = 0;
@@ -37,11 +37,11 @@ public class QuizGameManager : MonoBehaviour
         return quizID == currentQuizIndex;
     }
 
-    // Call this AFTER quiz was solved correctly
+    // Call this after quiz was solved correctly
     public void QuizSolved()
     {
         currentQuizIndex++;
-        scanLocked = false; // allow next image
+        scanLocked = false; 
     }
 
     // Lock scanning after correct image scan

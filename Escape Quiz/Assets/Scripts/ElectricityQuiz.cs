@@ -49,6 +49,6 @@ public class ElectricityQuiz : MonoBehaviour
     private void LoadNextHint()
     {
         quizPopup.SetActive(false);
-        sceneLoader.LoadThirdHint(); // or LoadThirdHint / LoadFourthHint
+        sceneLoader.LoadThirdHint(); 
     }
 }

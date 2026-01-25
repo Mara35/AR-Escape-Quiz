@@ -7,7 +7,7 @@ namespace CameraDoorScript
 public class CameraOpenDoor : MonoBehaviour {
 	public float DistanceOpen=3;
 	public GameObject text;
-	// Use this for initialization
+	
 	void Start () {
 		
 	}
