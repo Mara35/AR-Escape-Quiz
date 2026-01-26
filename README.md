@@ -25,7 +25,7 @@ The application was developed using the following technologies:
 
 ### Unity Game Engine
 
-C#
+- C# (coded in VS Code)
 - AR Foundation for cross-platform AR development
 - ARCore (Android)
 - Smartphone-only interaction
