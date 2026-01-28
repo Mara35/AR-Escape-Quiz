@@ -144,6 +144,26 @@ The game consists of four main quizzes, each embedded into the AR experience.
 
 The interface is designed to be intuitive and accessible without prior AR experience.
 
+## Limitations 
+
+- Image-based tracking only
+  - The app currently supports image tracking only; 3D object detection is not implemented.
+
+- Variable scanning time
+  - Image recognition speed depends on lighting conditions, camera movement, and image complexity.
+
+- Quiz spawning dependency
+  - Quizzes are spawned only after successful image detection, which can delay interaction and requires precise camera alignment.
+
+- Limited audio feedback
+  - Sound effects are minimal and could be expanded to improve immersion.
+
+- Device dependency
+  - Performance varies depending on smartphone hardware and ARCore support.
+
+- Linear gameplay
+  - The game follows a fixed sequence without alternative paths or adaptive difficulty.
+
 
 ## Unity Assets Store 
 All used assets were retrieved from the Unity Asset Store
