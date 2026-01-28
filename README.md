@@ -170,6 +170,6 @@ All used assets were retrieved from the Unity Asset Store
 https://assetstore.unity.com/search#q=props 
 
 ## Video
-Sample video of the game: [`final Video`](.presentations)  
+Sample video of the game: [`final Video`](presentations)  
 
 
