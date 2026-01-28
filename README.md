@@ -16,7 +16,7 @@ Some even start a PhD.
 
 The AR Escape Quiz App transforms this exaggerated academic reality into an interactive augmented reality escape room. Using a smartphone, players navigate through scenes, receive hints, scan images, and complete tasks until they finally escape — or remain part of MCI IV forever.
 
-The complete game flow is illustrated in the flow chart included above, which shows all scenes, decisions, and repeated steps. Since several gameplay steps repeat in the same structure, these repetitions are summarized in the chart using three dots to keep the diagram readable.
+The complete game flow is illustrated in the flow chart included below, which shows all scenes, decisions, and repeated steps. Since several gameplay steps repeat in the same structure, these repetitions are summarized in the chart using three dots to keep the diagram readable.
 
 
 ## Technical Implementation
@@ -168,5 +168,8 @@ The interface is designed to be intuitive and accessible without prior AR experi
 ## Unity Assets Store 
 All used assets were retrieved from the Unity Asset Store
 https://assetstore.unity.com/search#q=props 
+
+## Video
+Sample video of the game: [`final Video`](.submissions)  
 
 
