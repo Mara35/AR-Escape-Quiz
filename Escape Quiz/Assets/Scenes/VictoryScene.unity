@@ -716,7 +716,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '
 
-    Seconds.
+    Minutes.
 
 '
   m_isRightToLeft: 0
