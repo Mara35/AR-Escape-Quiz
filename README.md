@@ -165,7 +165,7 @@ The interface is designed to be intuitive and accessible without prior AR experi
   - The game follows a fixed sequence without alternative paths or adaptive difficulty.
 
 ## Video
-The final sample video of our AR Escape Quiz can be found in the presentations folder:
+The final sample video of our AR Escape Quiz can be found in the presentations folder: <br>
 Sample video of the game: [`final Video`](presentations)  
 
 
